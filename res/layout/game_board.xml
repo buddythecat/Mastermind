@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TableLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+		<TableRow android:id="@+id/tableRow8" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Guess 8" />
+			<ImageButton android:layout_width="60dip" android:layout_height="45dip" />
+			<ImageButton android:layout_width="60dip" android:layout_height="45dip" />
+			<ImageButton android:layout_width="60dip" android:layout_height="45dip" />
+			<ImageButton android:layout_width="60dip" android:layout_height="45dip" />
+		</TableRow>
+		<TableRow android:id="@+id/tableRow7" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Guess 7" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+		</TableRow>
+		<TableRow android:id="@+id/tableRow6" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Guess 6" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+
+		</TableRow>
+		<TableRow android:id="@+id/tableRow5" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Guess 5" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+		</TableRow>
+		<TableRow android:id="@+id/tableRow4" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Guess 4" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+		</TableRow>
+		<TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Guess 3" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+		</TableRow>
+		<TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Guess 2" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+		</TableRow>
+		<TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Guess 1" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+			<ImageButton android:layout_width="wrap_content" android:layout_height="45dip" />
+		</TableRow>
+	</TableLayout>
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="15dip" android:text="And the Solution is ..." />
+	<TableLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+		<TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Solution" />
+			<ImageButton android:layout_width="60dip" android:layout_height="45dip" />
+			<ImageButton android:layout_width="60dip" android:layout_height="45dip" />
+			<ImageButton android:layout_width="60dip" android:layout_height="45dip" />
+			<ImageButton android:layout_width="60dip" android:layout_height="45dip" />
+		</TableRow>
+	</TableLayout>
+
+</LinearLayout>
