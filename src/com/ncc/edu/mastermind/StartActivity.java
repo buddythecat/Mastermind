@@ -22,12 +22,10 @@ public class StartActivity extends Activity {
     }
     
     public void aboutGame(View v){
-    	new AlertDialog.Builder(this).setTitle("About")
-    		.setMessage("this is a super fun game that doesn't work")
-    		.setNeutralButton("Done", 
+    	new AlertDialog.Builder(this).setTitle("About").setMessage("this is a super fun game that doesn't work").setNeutralButton("Done", 
     				new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {
-							
+							dialog.dismiss();
 						}
 					});
     }
