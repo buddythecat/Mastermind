@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Mastermind</string>
+    <string name="about.text">About</string>
+    <string name="about.label">About Mastermind</string>
+    <string name="chooser.label">Pick a Color</string>
+    <string name="chooser.submit">Submit</string>
+    <string name="chooser.headline">Make A Guess</string>
 </resources>
