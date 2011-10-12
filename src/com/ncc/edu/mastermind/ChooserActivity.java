@@ -1,5 +1,8 @@
 package com.ncc.edu.mastermind;
 
+import com.ncc.edu.mastermind.game.*;
+
+import com.ncc.edu.mastermind.game.Choice;
 import com.ncc.edu.project2.R;
 
 import android.app.Activity;

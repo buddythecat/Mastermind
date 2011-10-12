@@ -1,9 +1,11 @@
-package com.ncc.edu.mastermind;
+package com.ncc.edu.mastermind.game;
 
+
+import java.io.Serializable;
 
 import com.ncc.edu.project2.R;
 
-public enum Choice{
+public enum Choice implements Serializable{
 	BLACK(R.drawable.black, "Black", 0),
 	BLUE(R.drawable.blue, "Blue", 1),
 	GREEN(R.drawable.green, "Green", 2),
