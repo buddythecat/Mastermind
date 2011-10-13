@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_gravity="center_vertical" 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"	>
+	<Button 
+		android:id="@+id/play_btn" 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:text="Play Game" 
+		android:onClick="startGame"/>
+	<Button 
+		android:id="@+id/about_btn" 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:text="About Mastermind" 
+		android:onClick="aboutGame"/>
+	<Button 
+		android:id="@+id/exit_btn" 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:text="Exit Game"
+		android:onClick="exitGame" />
+</LinearLayout>

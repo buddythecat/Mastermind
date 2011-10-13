@@ -28,7 +28,7 @@ public class ChooserActivity extends Activity {
     private void lockUsedPegs(int[] used){
     	for(int i = 0; i<used.length; i++){
     		if(used[i]!=-1){
-    			cRow.findPegByChoice(Choice.getChoiceFromKey(used[i])).getView().setEnabled(false);
+    			cRow.findPegByChoice(Choice.getChoiceFromKey(used[i])).lockPeg();
     		}
     	}
     	

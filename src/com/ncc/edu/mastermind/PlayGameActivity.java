@@ -39,6 +39,10 @@ public class PlayGameActivity extends Activity {
     			Mastermind.Results.GET_CHOICE);
     }
     
+    public void onSaveInstanceState(Bundle b){
+    	
+    }
+    
     public void onActivityResult(int requestCode, int resultCode, Intent data){
     	if(requestCode == Mastermind.Results.GET_CHOICE && resultCode == Mastermind.Results.SEND_CHOICE){
     		Bundle result = data.getExtras();

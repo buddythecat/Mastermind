@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	
+	<LinearLayout
+		android:id="@+id/game.board"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		
+		<LinearLayout
+			android:id="@+id/game.row0"
+			android:orientation="vertical" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			
+			<TextView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="Guess 1" />
+				
+			<include layout="@layout/game_board_row" />
+				
+		</LinearLayout>
+		
+		<LinearLayout
+			android:id="@+id/game.row1"
+			android:orientation="vertical" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			
+			<TextView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="Guess 2" />
+				
+			<include layout="@layout/game_board_row" />
+				
+		</LinearLayout>
+		
+		<LinearLayout
+			android:id="@+id/game.row2"
+			android:orientation="vertical" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			
+			<TextView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="Guess 3" />
+				
+			<include layout="@layout/game_board_row" />
+			
+		</LinearLayout>
+		
+		<LinearLayout 
+			android:id="@+id/game.row3"
+			android:orientation="vertical" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			
+			<TextView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="Guess 4" />
+				
+			<include layout="@layout/game_board_row" />
+				
+		</LinearLayout>
+		
+		<LinearLayout
+			android:id="@+id/game.row4"
+			android:orientation="vertical" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			
+			<TextView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="Guess 5" />
+				
+			<include layout="@layout/game_board_row" />
+		</LinearLayout>
+		
+		<LinearLayout 
+			android:id="@+id/game.row5"
+			android:orientation="vertical" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			
+			<TextView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="Guess 6" />
+				
+			<include layout="@layout/game_board_row" />
+				
+		</LinearLayout>
+		
+		<LinearLayout 
+			android:id="@+id/game.row6"
+			android:orientation="vertical" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			
+			<TextView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="Guess 7" />
+			<include layout="@layout/game_board_row" />
+				
+		</LinearLayout>
+		
+		<LinearLayout 
+			android:id="@+id/game.row7"
+			android:orientation="vertical" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			
+			<TextView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="Guess 8" />
+			<include layout="@layout/game_board_row" />
+				
+		</LinearLayout>
+		
+	</LinearLayout>
+	
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal">
+		
+		<LinearLayout 
+			android:id="@+id/game.solution"
+			android:orientation="horizontal"
+			android:layout_gravity="center"
+			android:layout_marginTop="12dp" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			
+			<TextView 
+				android:layout_gravity="center_vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="24dp" 
+				android:text="Solution" />
+				
+			<include layout="@layout/game_board_solution" />
+				
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

@@ -57,7 +57,8 @@ public final class R {
         public static final int game_board_row=0x7f030002;
         public static final int game_board_solution=0x7f030003;
         public static final int game_choose=0x7f030004;
-        public static final int main=0x7f030005;
+        public static final int game_choose_buttons=0x7f030005;
+        public static final int main=0x7f030006;
     }
     public static final class string {
         public static final int about_label=0x7f050002;

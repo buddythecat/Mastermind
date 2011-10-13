@@ -2,8 +2,7 @@ package com.ncc.edu.mastermind;
 
 import android.app.Activity;
 import android.view.View;
-import android.widget.TableLayout;
-import android.widget.TableRow;
+import android.view.ViewGroup;
 
 import com.ncc.edu.mastermind.game.GuessRow;
 import com.ncc.edu.mastermind.game.Peg;
@@ -58,9 +57,9 @@ public class Game {
 	public void setActivePeg(Peg p)				{	active = p;			}
 	
     private void buildGuessBoard(Activity parent){
-    	TableLayout table = (TableLayout)parent.findViewById(R.id.game_board);
+    	ViewGroup table = (ViewGroup)parent.findViewById(R.id.game_board);
     	for(int i = 0; i<NUM_GUESS_ROWS; i++){
-    		board[i] = new GuessRow((TableRow)table.getChildAt(i));
+    		board[i] = new GuessRow((ViewGroup)table.getChildAt(i));
     		board[i].lockRow();
     	}
     	currentRow = board[rowNum];
@@ -68,7 +67,7 @@ public class Game {
     }
     
     private void buildSolutionRow(Activity parent){
-    	solution = new SolutionRow((TableRow)parent.findViewById(R.id.game_solution));
+    	solution = new SolutionRow((ViewGroup)parent.findViewById(R.id.game_solution));
     }
     
     public void catchSelectedPeg(View v){
