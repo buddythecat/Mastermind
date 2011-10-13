@@ -5,7 +5,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 public class GuessRow extends Row {
-	private static final int SIZE=4;
+	protected static final int SIZE=4;
+	
 	public GuessRow(ViewGroup t){
 		super(t, SIZE);
 	}
@@ -17,15 +18,26 @@ public class GuessRow extends Row {
 		}
 	}
 	
+	public Peg getNextEmptyPeg(){
+		for(int i=0; i<pegs.length; i++){
+			if(pegs[i].getChoice().equals(Choice.EMPTY))
+				return pegs[i];
+		}
+		return null;
+	}
+	
 	public void markPeg(View v, Choice c){
 		this.findPegByView(v).setChoice(c);
 	}
+	
 	public void markPeg(int pos, Choice c){
 		pegs[pos].setChoice(c);
 	}
+	
 	public Peg[] getPegs(){
 		return pegs;
 	}
+	
 	public void matchPegs(Peg[] toMatch){
 		for(int i = 0; i < SIZE; i++){
 			if(!toMatch[i].getChoice().equals(Choice.EMPTY)){
@@ -40,12 +52,12 @@ public class GuessRow extends Row {
 	
 	public void lockRow(){
 		for(int i=0; i<SIZE; i++)
-			pegs[i].getView().setEnabled(false);
+			pegs[i].lockPeg();
 	}
 	
 	public void unlockRow(){
 		for(int i=0; i<SIZE; i++)
-			pegs[i].getView().setEnabled(true);
+			pegs[i].unlockPeg();
 	}
 	
 	public void finishRow(){

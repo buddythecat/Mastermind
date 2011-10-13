@@ -4,8 +4,9 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 public class ChooserRow extends Row {
+	protected final static int SIZE = 6;
 	public ChooserRow(ViewGroup v){
-		super(v, 6);
+		super(v, ChooserRow.SIZE);
 	}
 	
 	protected void makePegs(){

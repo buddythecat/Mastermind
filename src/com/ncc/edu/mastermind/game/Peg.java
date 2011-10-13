@@ -42,6 +42,12 @@ public class Peg{
 	
 	public void lockPeg(){
 		this.getView().setEnabled(false);
+		this.getView().setFocusable(false);
+	}
+	
+	public void unlockPeg(){
+		this.getView().setEnabled(true);
+		this.getView().setFocusable(true);
 	}
 	
 }

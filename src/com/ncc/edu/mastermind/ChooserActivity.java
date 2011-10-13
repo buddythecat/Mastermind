@@ -31,6 +31,11 @@ public class ChooserActivity extends Activity {
     			cRow.findPegByChoice(Choice.getChoiceFromKey(used[i])).getView().setEnabled(false);
     		}
     	}
+    	
+    	int i = 0;
+    	while(!cRow.getPegAtIndex(i).getView().isEnabled())
+    		i++;
+    	cRow.getPegAtIndex(i).getView().requestFocus();
     }
     
     public void pickChoice(View v){

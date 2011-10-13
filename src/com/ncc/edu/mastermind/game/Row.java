@@ -4,7 +4,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public abstract class Row {
-	
 	protected Peg[] pegs;
 	protected ViewGroup pegSet;
 
@@ -18,21 +17,19 @@ public abstract class Row {
 	protected abstract void makePegs();
 
 	public Peg findPegByView(View v) {
-		Peg result = null;
 		for(int i=0; i<pegs.length; i++){
 			if(pegs[i].getView().equals(v))
-				result = pegs[i];
+				return pegs[i];
 		}
-		return result;
+		return null;
 	}
 
 	public Peg findPegByChoice(Choice c) {
-		Peg result = null;
 		for(int i = 0; i<pegs.length; i++){
 			if(pegs[i].getChoice().equals(c))
-				result = pegs[i];
+				return pegs[i];
 		}
-		return result;
+		return null;
 	}
 
 	public int[] getSelectedChoiceKeys() {

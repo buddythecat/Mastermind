@@ -3,20 +3,24 @@
 		android:id="@+id/auto"
 		android:layout_width="@dimen/game.guess.width"
 		android:layout_height="@dimen/game.guess.height" 
-		android:clickable="false"/>
+		android:clickable="false"
+		android:focusable="false"/>
 	<ImageButton 
 		android:id="@+id/auto"
 		android:layout_width="@dimen/game.guess.width"
 		android:layout_height="@dimen/game.guess.height" 
-		android:clickable="false"/>
+		android:clickable="false"
+		android:focusable="false"/>
 	<ImageButton 
 		android:id="@+id/auto"
 		android:layout_width="@dimen/game.guess.width"
 		android:layout_height="@dimen/game.guess.height" 
-		android:clickable="false"/>
+		android:clickable="false"
+		android:focusable="false"/>
 	<ImageButton 
 		android:id="@+id/auto"
 		android:layout_width="@dimen/game.guess.width"
 		android:layout_height="@dimen/game.guess.height" 
-		android:clickable="false"/>
+		android:clickable="false"
+		android:focusable="false"/>
 </merge>
