@@ -1,0 +1,22 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+	<ImageButton 
+		android:id="@+id/auto"
+		android:layout_width="@dimen/game.guess.width"
+		android:layout_height="@dimen/game.guess.height" 
+		android:clickable="false"/>
+	<ImageButton 
+		android:id="@+id/auto"
+		android:layout_width="@dimen/game.guess.width"
+		android:layout_height="@dimen/game.guess.height" 
+		android:clickable="false"/>
+	<ImageButton 
+		android:id="@+id/auto"
+		android:layout_width="@dimen/game.guess.width"
+		android:layout_height="@dimen/game.guess.height" 
+		android:clickable="false"/>
+	<ImageButton 
+		android:id="@+id/auto"
+		android:layout_width="@dimen/game.guess.width"
+		android:layout_height="@dimen/game.guess.height" 
+		android:clickable="false"/>
+</merge>

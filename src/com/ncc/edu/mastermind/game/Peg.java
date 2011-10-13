@@ -1,8 +1,5 @@
 package com.ncc.edu.mastermind.game;
 
-
-import java.io.Serializable;
-
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -41,6 +38,10 @@ public class Peg{
 	
 	public void clearPeg(){
 		this.markPeg(Choice.EMPTY);
+	}
+	
+	public void lockPeg(){
+		this.getView().setEnabled(false);
 	}
 	
 }

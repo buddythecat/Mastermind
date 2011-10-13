@@ -2,7 +2,7 @@
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
-  android:layout_width="200dp"
+  android:layout_width="@dimen/game.choose.width"
   android:layout_height="match_parent" >
   	<TextView
   		android:id="@+id/text.choose.headline"
@@ -10,49 +10,61 @@
   		android:layout_height="wrap_content"
   		android:layout_gravity="center_horizontal"
   		android:text="@string/chooser.headline" />
-  	
-    <ImageButton
-    	android:id="@+id/button.choose.red"
-    	android:layout_width="@dimen/game.guess.width"
-    	android:layout_height="@dimen/game.guess.height"
-    	android:layout_gravity="center_horizontal"
-    	android:layout_marginTop="25dp"
-    	android:onClick="pickChoice"
-    	android:src="@drawable/red"/>
-    <ImageButton
-    	android:id="@+id/button.choose.green"
-    	android:layout_width="@dimen/game.guess.width"
-    	android:layout_height="@dimen/game.guess.height"
-    	android:layout_gravity="center_horizontal"
-    	android:onClick="pickChoice"
-    	android:src="@drawable/green"/>
-    <ImageButton
-    	android:id="@+id/button.choose.yellow"
-    	android:layout_width="@dimen/game.guess.width"
-    	android:layout_height="@dimen/game.guess.height"
-    	android:layout_gravity="center_horizontal"
-    	android:onClick="pickChoice"
-    	android:src="@drawable/yellow"/>
-    <ImageButton
-    	android:id="@+id/button.choose.blue"
-    	android:layout_width="@dimen/game.guess.width"
-    	android:layout_height="@dimen/game.guess.height"
-    	android:layout_gravity="center_horizontal"
-    	android:onClick="pickChoice"
-    	android:src="@drawable/blue"/>
-    <ImageButton
-    	android:id="@+id/button.choose.white"
-    	android:layout_width="@dimen/game.guess.width"
-    	android:layout_height="@dimen/game.guess.height"
-    	android:layout_gravity="center_horizontal"
-    	android:onClick="pickChoice"
-    	android:src="@drawable/white"/>
-    <ImageButton
-    	android:id="@+id/button.choose.black"
-    	android:layout_width="@dimen/game.guess.width"
-    	android:layout_height="@dimen/game.guess.height"
-    	android:layout_gravity="center_horizontal"
-    	android:onClick="pickChoice"
-    	android:layout_marginBottom="25dp"
-    	android:src="@drawable/black"/>
+  	<LinearLayout
+  		  android:id="@+id/group.choose"
+  		  android:orientation="vertical"
+  		  android:layout_width="wrap_content"
+  		  android:layout_height="wrap_content"
+  		  android:layout_gravity="center_horizontal">
+	    <ImageButton
+	    	android:id="@+id/button.choose.red"
+	    	android:layout_width="@dimen/game.guess.width"
+	    	android:layout_height="@dimen/game.guess.height"
+	    	android:layout_gravity="center_horizontal"
+	    	android:layout_marginTop="25dp"
+	    	android:onClick="pickChoice"
+	    	android:tag="@string/choice.red"
+	    	android:src="@drawable/red"/>
+	    <ImageButton
+	    	android:id="@+id/button.choose.green"
+	    	android:layout_width="@dimen/game.guess.width"
+	    	android:layout_height="@dimen/game.guess.height"
+	    	android:layout_gravity="center_horizontal"
+	    	android:onClick="pickChoice"
+	    	android:tag="@string/choice.green"
+	    	android:src="@drawable/green"/>
+	    <ImageButton
+	    	android:id="@+id/button.choose.yellow"
+	    	android:layout_width="@dimen/game.guess.width"
+	    	android:layout_height="@dimen/game.guess.height"
+	    	android:layout_gravity="center_horizontal"
+	    	android:onClick="pickChoice"
+	    	android:tag="@string/choice.yellow"
+	    	android:src="@drawable/yellow"/>
+	    <ImageButton
+	    	android:id="@+id/button.choose.blue"
+	    	android:layout_width="@dimen/game.guess.width"
+	    	android:layout_height="@dimen/game.guess.height"
+	    	android:layout_gravity="center_horizontal"
+	    	android:onClick="pickChoice"
+	    	android:tag="@string/choice.blue"
+	    	android:src="@drawable/blue"/>
+	    <ImageButton
+	    	android:id="@+id/button.choose.white"
+	    	android:layout_width="@dimen/game.guess.width"
+	    	android:layout_height="@dimen/game.guess.height"
+	    	android:layout_gravity="center_horizontal"
+	    	android:onClick="pickChoice"
+	    	android:tag="@string/choice.white"
+	    	android:src="@drawable/white"/>
+	    <ImageButton
+	    	android:id="@+id/button.choose.black"
+	    	android:layout_width="@dimen/game.guess.width"
+	    	android:layout_height="@dimen/game.guess.height"
+	    	android:layout_gravity="center_horizontal"
+	    	android:onClick="pickChoice"
+	    	android:layout_marginBottom="25dp"
+	    	android:tag="Black"
+	    	android:src="@drawable/black"/>
+	    </LinearLayout>
 </LinearLayout>

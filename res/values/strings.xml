@@ -6,4 +6,11 @@
     <string name="chooser.label">Pick a Color</string>
     <string name="chooser.submit">Submit</string>
     <string name="chooser.headline">Make A Guess</string>
+    <string name="choice.red">Red</string>
+    <string name="choice.black">Black</string>
+    <string name="choice.blue">Blue</string>
+    <string name="choice.yellow">Yellow</string>
+    <string name="choice.green">Green</string>
+    <string name="choice.white">White</string>
+    <string name="choice.empty">Empty</string>
 </resources>

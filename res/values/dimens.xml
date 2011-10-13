@@ -2,4 +2,5 @@
 <resources>
     <dimen name="game.guess.width">60dp</dimen>
     <dimen name="game.guess.height">45dp</dimen>
+    <dimen name="game.choose.width">200dp</dimen>
 </resources>

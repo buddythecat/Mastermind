@@ -20,26 +20,7 @@
 				android:layout_height="wrap_content" 
 				android:text="Guess 1" />
 				
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
+			<include layout="@layout/game_board_row" />
 				
 		</TableRow>
 		
@@ -53,26 +34,7 @@
 				android:layout_height="wrap_content" 
 				android:text="Guess 2" />
 				
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"	
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton
-				android:id="@+id/auto" 
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
+			<include layout="@layout/game_board_row" />
 				
 		</TableRow>
 		
@@ -86,26 +48,8 @@
 				android:layout_height="wrap_content" 
 				android:text="Guess 3" />
 				
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
+			<include layout="@layout/game_board_row" />
+			
 		</TableRow>
 		
 		<TableRow 
@@ -118,26 +62,7 @@
 				android:layout_height="wrap_content" 
 				android:text="Guess 4" />
 				
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
+			<include layout="@layout/game_board_row" />
 				
 		</TableRow>
 		
@@ -151,26 +76,7 @@
 				android:layout_height="wrap_content" 
 				android:text="Guess 5" />
 				
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
+			<include layout="@layout/game_board_row" />
 		</TableRow>
 		
 		<TableRow 
@@ -183,26 +89,7 @@
 				android:layout_height="wrap_content" 
 				android:text="Guess 6" />
 				
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
+			<include layout="@layout/game_board_row" />
 				
 		</TableRow>
 		
@@ -215,26 +102,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content" 
 				android:text="Guess 7" />
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:id="@+id/auto"
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
+			<include layout="@layout/game_board_row" />
 				
 		</TableRow>
 		
@@ -247,22 +115,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content" 
 				android:text="Guess 8" />
-			<ImageButton 
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
-			<ImageButton 
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" 
-				android:onClick="launchChooser"/>
+			<include layout="@layout/game_board_row" />
 				
 		</TableRow>
 		
@@ -279,7 +132,7 @@
 		android:layout_height="wrap_content">
 		
 		<TableRow 
-			android:id="@+id/tableRow1" 
+			android:id="@+id/game.solution" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
 			
@@ -288,18 +141,7 @@
 				android:layout_height="wrap_content" 
 				android:text="Solution" />
 				
-			<ImageButton 
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" />
-			<ImageButton 
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" />
-			<ImageButton 
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" />
-			<ImageButton 
-				android:layout_width="@dimen/game.guess.width"
-				android:layout_height="@dimen/game.guess.height" />
+			<include layout="@layout/game_board_solution" />
 				
 		</TableRow>
 		

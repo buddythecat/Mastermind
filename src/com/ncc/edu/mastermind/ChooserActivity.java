@@ -1,23 +1,36 @@
 package com.ncc.edu.mastermind;
-
-import com.ncc.edu.mastermind.game.*;
-
 import com.ncc.edu.mastermind.game.Choice;
+import com.ncc.edu.mastermind.game.ChooserRow;
+import com.ncc.edu.mastermind.game.Row;
+
 import com.ncc.edu.project2.R;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 
 public class ChooserActivity extends Activity {
     private Bundle result;
+    private Row cRow;
+    
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	result = new Bundle();
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.game_choose);
+        cRow = new ChooserRow(ViewGroup.class.cast(this.findViewById(R.id.group_choose)));
+        this.lockUsedPegs(this.getIntent().getIntArrayExtra(Mastermind.IntentExtras.CHOICES_USED));
+    }
+    
+    private void lockUsedPegs(int[] used){
+    	for(int i = 0; i<used.length; i++){
+    		if(used[i]!=-1){
+    			cRow.findPegByChoice(Choice.getChoiceFromKey(used[i])).getView().setEnabled(false);
+    		}
+    	}
     }
     
     public void pickChoice(View v){
@@ -42,11 +55,13 @@ public class ChooserActivity extends Activity {
     		selected = Choice.RED;
     		break;
     	}
-    	result.putInt("resID", selected.getId());
-    	result.putInt("choiceIndex", selected.getKey());
+    	result.putInt(Mastermind.IntentExtras.CHOICE_SELECTED, selected.getKey());
+    	
     	Intent i = new Intent();
     	i.putExtras(result);
-    	this.setResult(MastermindApplication.SEND_CHOICE, i);
+    	
+    	this.setResult(Mastermind.Results.SEND_CHOICE, i);
+    	
     	this.finish();
     }
 }

@@ -23,6 +23,7 @@
        	</activity>
        	
        	<activity android:name="com.ncc.edu.mastermind.ChooserActivity"
+       		android:theme="@android:style/Theme.Dialog"
        		android:label="@string/chooser.label">
        	</activity>
     </application>

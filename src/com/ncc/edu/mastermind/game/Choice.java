@@ -12,7 +12,7 @@ public enum Choice implements Serializable{
 	RED(R.drawable.red, "Red", 3),
 	WHITE(R.drawable.white, "White", 4),
 	YELLOW(R.drawable.yellow, "Yellow", 5),
-	EMPTY(R.drawable.empty, "Unchosen", 6);
+	EMPTY(R.drawable.empty, "Empty", 6);
 	
 	private int resId;
 	private int key;
@@ -27,6 +27,15 @@ public enum Choice implements Serializable{
 	public int getId(){return resId;}
 	public String getName(){return name;}
 	public int getKey(){return key;}
+	
+	public static Choice getChoiceFromName(String s){
+		Choice[] values = Choice.values();
+		for(int i=0; i<values.length; i++){
+			if(values[i].getName().equals(s))
+				return values[i];
+		}
+		return null;
+	}
 	
 	public static Choice getChoiceFromKey(int i){
 		Choice c;
