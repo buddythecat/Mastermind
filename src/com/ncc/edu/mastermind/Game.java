@@ -1,9 +1,12 @@
 package com.ncc.edu.mastermind;
 
 import android.app.Activity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableRow;
 
+import com.ncc.edu.mastermind.game.Choice;
 import com.ncc.edu.mastermind.game.GuessRow;
 import com.ncc.edu.mastermind.game.Peg;
 import com.ncc.edu.mastermind.game.SolutionRow;
@@ -45,7 +48,12 @@ public class Game {
 	
 	public GuessRow	getCurrentRow()				{	return currentRow;	}
 	public void setCurrentRow(GuessRow next)	{	currentRow = next;	}
-	
+	public GuessRow getLastRow(){	
+		if(rowNum>0)
+			return board[rowNum-1];
+		else
+			return currentRow;	
+	}
 	public int getCurrentRowNum()				{	return rowNum;		}
 	public void setCurrentRowNum(int row)		{	rowNum = row;		}
 	public void incrCurrentRowNum()				{	rowNum++;			}
@@ -67,17 +75,17 @@ public class Game {
     }
     
     private void buildSolutionRow(Activity parent){
-    	solution = new SolutionRow((ViewGroup)parent.findViewById(R.id.game_solution));
+    	ViewGroup t = ViewGroup.class.cast(parent.findViewById(R.id.game_solution));
+    	solution = new SolutionRow(t);
     }
     
     public void catchSelectedPeg(View v){
     	active = currentRow.findPegByView(v);
     }
-    
-    
+        
     public void nextRow() throws GameWinException, GameLoseException{
     	currentRow.lockRow();
-    	solution.compareToRow(currentRow);
+    	currentRow.setFeedback(this.compareRowToSolution());
     	if(!solution.hasWon()){
     		rowNum++;
     		if(rowNum<Game.NUM_GUESS_ROWS){
@@ -110,4 +118,29 @@ public class Game {
     public void showSolution(){
     	solution.showSolution();
     }
+	/**
+	 * compareToRow - 
+	 * This method is in charge of comparing the last guess to the solution(this).
+	 * It returns a FeedbackRow which is a Row which contains only White/Black pegs.
+	 * The WHITE pegs denote right peg, wrong position.  BLACK pegs denote right peg,
+	 * right position. 
+	 * @param target - the row to compare against the solution
+	 * @returns - returns the choices for the feedback row to be assigned.
+	 */
+	public Choice[] compareRowToSolution(){
+		Choice[] result = new Choice[4];
+		Choice[] temp = solution.getSolution();
+		for(int i = 0; i<4; i++){
+			if(currentRow.findPegByChoice(temp[i])!=null)
+				if(currentRow.getPegAtIndex(i).getChoice().equals(temp[i]))
+					//This is the Right Peg at Right Spot
+					result[i] = Choice.BLACK;
+				else
+					//this is just the right Peg
+					result[i] = Choice.WHITE;
+			else
+				result[i] = Choice.EMPTY;
+		}
+		return result;
+	}
 }

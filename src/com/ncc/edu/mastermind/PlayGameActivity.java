@@ -1,6 +1,7 @@
 package com.ncc.edu.mastermind;
 
 import com.ncc.edu.mastermind.game.Choice;
+import com.ncc.edu.mastermind.game.GuessRow;
 import com.ncc.edu.project2.R;
 
 
@@ -9,7 +10,12 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class PlayGameActivity extends Activity {
 	private Game thisGame;
@@ -29,11 +35,6 @@ public class PlayGameActivity extends Activity {
     	
     	thisGame.catchSelectedPeg(v);
     	//pull the used choices
-    	
-    	chooserIntent.putExtra(
-    			Mastermind.IntentExtras.CHOICES_USED, 
-    			thisGame.getCurrentRow().getSelectedChoiceKeys());
-    	
     	this.startActivityForResult(
     			chooserIntent, 
     			Mastermind.Results.GET_CHOICE);
@@ -42,6 +43,7 @@ public class PlayGameActivity extends Activity {
     public void onSaveInstanceState(Bundle b){
     	
     }
+    
     
     public void onActivityResult(int requestCode, int resultCode, Intent data){
     	if(requestCode == Mastermind.Results.GET_CHOICE && resultCode == Mastermind.Results.SEND_CHOICE){
@@ -52,6 +54,7 @@ public class PlayGameActivity extends Activity {
     			if(thisGame.isCurrentRowFull()){
     				thisGame.nextRow();
     				thisGame.getCurrentRow().getNextEmptyPeg().getView().requestFocus();
+    				
     			}
     			else
     				thisGame.getCurrentRow().getNextEmptyPeg().getView().requestFocus();
@@ -69,8 +72,7 @@ public class PlayGameActivity extends Activity {
     	builder.setMessage(s+"\nWould you like to play again?")
     		.setCancelable(false)
     		.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-    			
-				@Override
+ 
 				public void onClick(DialogInterface dialog, int id) {
 					PlayGameActivity.this.getGame().newGame();
 					dialog.cancel();
@@ -78,7 +80,6 @@ public class PlayGameActivity extends Activity {
 			})
 			.setNegativeButton("No", new DialogInterface.OnClickListener() {
 				
-				@Override
 				public void onClick(DialogInterface dialog, int id) {
 					PlayGameActivity.this.finish();
 				}

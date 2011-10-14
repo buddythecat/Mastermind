@@ -14,6 +14,10 @@ public abstract class Row {
 		this.makePegs();
 	}
 	
+	public Row(int len){
+		this(null, len);
+	}
+	
 	protected abstract void makePegs();
 
 	public Peg findPegByView(View v) {
@@ -45,6 +49,13 @@ public abstract class Row {
 	
 	public Peg getPegAtIndex(int i){
 		return pegs[i];
+	}
+	
+	public int findPegIndex(Peg p){
+		int i = 0;
+		while(!pegs[i].equals(p))
+			i++;
+		return i;
 	}
 
 }

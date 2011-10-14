@@ -1,0 +1,37 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<TableLayout
+	android:orientation="horizontal"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:background="#DAAA">
+	<TableRow
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		<ImageView
+			android:id="@+id/feedback.peg1"
+			android:layout_width="@dimen/game.feedback.width"
+			android:layout_height="@dimen/game.feedback.height"
+			android:scaleType="fitCenter"/>
+		<ImageView
+			android:id="@+id/feedback.peg2"
+			android:layout_width="@dimen/game.feedback.width"
+			android:layout_height="@dimen/game.feedback.height"
+			android:scaleType="fitCenter"/>
+	</TableRow>
+	<TableRow
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		<ImageView
+			android:id="@+id/feedback.peg3"
+			android:layout_width="@dimen/game.feedback.width"
+			android:layout_height="@dimen/game.feedback.height"
+			android:scaleType="fitCenter"/>
+		<ImageView
+			android:id="@+id/feedback.peg4"
+			android:layout_width="@dimen/game.feedback.width"
+			android:layout_height="@dimen/game.feedback.height"
+			android:scaleType="fitCenter"/>
+		</TableRow>
+</TableLayout>
+</merge>
+  

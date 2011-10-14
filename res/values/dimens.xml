@@ -3,4 +3,6 @@
     <dimen name="game.guess.width">60dp</dimen>
     <dimen name="game.guess.height">45dp</dimen>
     <dimen name="game.choose.width">200dp</dimen>
+    <dimen name="game.feedback.width">35dp</dimen>
+    <dimen name="game.feedback.height">22dp</dimen>
 </resources>

@@ -1,7 +1,6 @@
 package com.ncc.edu.mastermind;
+
 import com.ncc.edu.mastermind.game.Choice;
-import com.ncc.edu.mastermind.game.ChooserRow;
-import com.ncc.edu.mastermind.game.Row;
 
 import com.ncc.edu.project2.R;
 
@@ -9,35 +8,31 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 
+/**
+ * ChooserActivity - 
+ * This subclass of Activity is used to poll the user for the
+ * peg to place at the selected position.
+ * @author Rich "Dances With Caterpillars" TUfano
+ *
+ */
 public class ChooserActivity extends Activity {
+	
     private Bundle result;
-    private Row cRow;
-    
-	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	result = new Bundle();
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.game_choose);
-        cRow = new ChooserRow(ViewGroup.class.cast(this.findViewById(R.id.group_choose)));
-        this.lockUsedPegs(this.getIntent().getIntArrayExtra(Mastermind.IntentExtras.CHOICES_USED));
     }
     
-    private void lockUsedPegs(int[] used){
-    	for(int i = 0; i<used.length; i++){
-    		if(used[i]!=-1){
-    			cRow.findPegByChoice(Choice.getChoiceFromKey(used[i])).lockPeg();
-    		}
-    	}
-    	
-    	int i = 0;
-    	while(!cRow.getPegAtIndex(i).getView().isEnabled())
-    		i++;
-    	cRow.getPegAtIndex(i).getView().requestFocus();
-    }
-    
+    /**
+     * pickChoice - 
+     * pickChoice is bound to the row buttons in the XML for the chooser layout.
+     * It handles receiving the choice from the user, adding it to a bundle,
+     * and passing that back to the parent activity.  
+     * @param v - the View which has been clicked
+     */
     public void pickChoice(View v){
     	Choice selected = Choice.EMPTY;
     	switch(v.getId()){
@@ -60,6 +55,7 @@ public class ChooserActivity extends Activity {
     		selected = Choice.RED;
     		break;
     	}
+    	
     	result.putInt(Mastermind.IntentExtras.CHOICE_SELECTED, selected.getKey());
     	
     	Intent i = new Intent();

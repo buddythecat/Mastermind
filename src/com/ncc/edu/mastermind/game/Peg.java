@@ -2,6 +2,7 @@ package com.ncc.edu.mastermind.game;
 
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class Peg{
 	private Choice pegState;
@@ -30,7 +31,7 @@ public class Peg{
 	public void markPeg(Choice c){
 		pegState = c;
 		try{
-			(ImageButton.class.cast(pegButton)).setImageResource(pegState.getId());
+			(ImageView.class.cast(pegButton)).setImageResource(pegState.getId());
 		}catch(ClassCastException e){
 			System.out.println(e.getMessage());
 		}

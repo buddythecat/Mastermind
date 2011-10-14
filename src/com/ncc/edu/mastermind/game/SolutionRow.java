@@ -4,7 +4,6 @@ import java.util.Random;
 
 import android.view.ViewGroup;
 
-
 public class SolutionRow extends GuessRow{
 	private Choice[] solution = new Choice[GuessRow.SIZE];
 	private Random rnd;
@@ -16,24 +15,17 @@ public class SolutionRow extends GuessRow{
 	}
 	
 	private void buildSolution(){
-		Choice[] available = Choice.values();
-		int temp;
+		Choice[] choices = Choice.values();
 		for(int i=0; i<GuessRow.SIZE; i++){
-			temp = rnd.nextInt(available.length);
-			while(available[temp].equals(Choice.EMPTY))
-				temp = rnd.nextInt(available.length);	
-			solution[i] = available[temp];
-			available[temp] = Choice.EMPTY;
+			solution[i] = choices[rnd.nextInt(choices.length-1)];
 			pegs[i].getView().setFocusable(false);	
 		}
 	}
 	
-	public void compareToRow(GuessRow target){
-		for(int i = 0; i<GuessRow.SIZE;i++){
-			if(target.getPegAtIndex(i).getChoice().equals(solution[i]))
-				this.getPegAtIndex(i).markPeg(solution[i]);
-		}
+	public Choice[] getSolution(){
+		return solution;
 	}
+
 	
 	public boolean hasWon(){
 		return(this.isFull());

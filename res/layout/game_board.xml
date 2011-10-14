@@ -4,93 +4,68 @@
 	android:orientation="vertical" 
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
-	
+	<ScrollView 
+		android:id="@+id/workspace"
+		android:layout_width="fill_parent"
+		android:layout_height="300dp">
+		
 	<TableLayout 
 		android:id="@+id/game.board"
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content">
 		
 		<TableRow 
 			android:id="@+id/game.row0" 
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 1" />
-				
+			android:layout_height="wrap_content">	
+
 			<include layout="@layout/game_board_row" />
-				
+			<include layout="@layout/game_feedback" />
 		</TableRow>
 		
 		<TableRow 
 			android:id="@+id/game.row1" 
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 2" />
-				
+			android:layout_height="wrap_content">				
+
 			<include layout="@layout/game_board_row" />
-				
+			<include layout="@layout/game_feedback" />
 		</TableRow>
 		
 		<TableRow 
 			android:id="@+id/game.row2" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 3" />
-				
+
 			<include layout="@layout/game_board_row" />
-			
+			<include layout="@layout/game_feedback" />
 		</TableRow>
 		
 		<TableRow 
 			android:id="@+id/game.row3" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 4" />
-				
+
 			<include layout="@layout/game_board_row" />
-				
+			<include layout="@layout/game_feedback" />
 		</TableRow>
 		
 		<TableRow 
 			android:id="@+id/game.row4" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 5" />
-				
+	
 			<include layout="@layout/game_board_row" />
+			<include layout="@layout/game_feedback" />
 		</TableRow>
 		
 		<TableRow 
 			android:id="@+id/game.row5" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 6" />
 				
 			<include layout="@layout/game_board_row" />
-				
+			<include layout="@layout/game_feedback" />	
 		</TableRow>
 		
 		<TableRow 
@@ -98,12 +73,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
 			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 7" />
 			<include layout="@layout/game_board_row" />
-				
+			<include layout="@layout/game_feedback" />	
 		</TableRow>
 		
 		<TableRow 
@@ -111,18 +82,16 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
 			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 8" />
 			<include layout="@layout/game_board_row" />
+			<include layout="@layout/game_feedback" />
 				
 		</TableRow>
 		
 	</TableLayout>
-	
+	</ScrollView>
 	
 	<TextView 
+		android:layout_marginTop="50dp"
 		android:layout_width="fill_parent"
 		android:layout_height="20dip" 
 		android:text="And the Solution is ..." />
@@ -135,12 +104,7 @@
 			android:id="@+id/game.solution" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Solution" />
-				
+
 			<include layout="@layout/game_board_solution" />
 				
 		</TableRow>

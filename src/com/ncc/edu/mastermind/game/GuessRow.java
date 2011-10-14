@@ -6,15 +6,20 @@ import android.widget.ImageButton;
 
 public class GuessRow extends Row {
 	protected static final int SIZE=4;
+	private FeedbackRow feedback;
 	
 	public GuessRow(ViewGroup t){
 		super(t, SIZE);
 	}
 	
+	public GuessRow(){
+		super(SIZE);
+	}
+	
 	protected void makePegs() {
-		for(int i = 1; i<pegs.length+1; i++){
+		for(int i = 0; i<pegs.length; i++){
 			ImageButton temp = ImageButton.class.cast(pegSet.getChildAt(i));
-			pegs[i-1] = new Peg(temp,i-1);
+			pegs[i] = new Peg(temp,i);
 		}
 	}
 	
@@ -24,6 +29,11 @@ public class GuessRow extends Row {
 				return pegs[i];
 		}
 		return null;
+	}
+	
+	public void setFeedback(Choice[] feedChoices){
+		feedback = new FeedbackRow((ViewGroup)pegSet.getChildAt(SIZE));
+		feedback.showFeedback(feedChoices);
 	}
 	
 	public void markPeg(View v, Choice c){
