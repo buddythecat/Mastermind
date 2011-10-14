@@ -36,6 +36,10 @@ public class GuessRow extends Row {
 		feedback.showFeedback(feedChoices);
 	}
 	
+	public FeedbackRow getFeedback(){
+		return feedback;
+	}
+	
 	public void markPeg(View v, Choice c){
 		this.findPegByView(v).setChoice(c);
 	}
@@ -86,5 +90,18 @@ public class GuessRow extends Row {
 	public void clearRow(){
 		for(int i = 0; i<SIZE; i++)
 			pegs[i].clearPeg();
+		if(feedback!=null)
+			feedback.clearRow();
+	}
+	
+	public void registerNewRowView(ViewGroup v){
+		pegSet = v;
+		for(int i = 0; i<pegs.length; i++){
+			ImageButton temp = ImageButton.class.cast(pegSet.getChildAt(i));
+			pegs[i].setView(temp);
+			pegs[i].redrawView();
+		}
+		if(feedback!=null)
+			feedback.redrawFeedbackView((ViewGroup)pegSet.getChildAt(SIZE));
 	}
 }

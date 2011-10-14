@@ -40,4 +40,17 @@ public class SolutionRow extends GuessRow{
 		for(int i=0; i<GuessRow.SIZE; i++)
 			pegs[i].markPeg(solution[i]);
 	}
+	
+	public int[] getSolutionForParcel(){
+		int[] temp = new int[4];
+		for(int i = 0; i<4; i++)
+			temp[i] = solution[i].getKey();
+		return temp;
+	}
+	
+	public void recoverSolutionFromParcel(int[] recovered){
+		for(int i = 0; i<4; i++){
+			solution[i] = Choice.getChoiceFromKey(i);
+		}
+	}
 }

@@ -1,7 +1,6 @@
 package com.ncc.edu.mastermind;
 
 import com.ncc.edu.mastermind.game.Choice;
-import com.ncc.edu.mastermind.game.GuessRow;
 import com.ncc.edu.project2.R;
 
 
@@ -10,12 +9,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 public class PlayGameActivity extends Activity {
 	private Game thisGame;
@@ -40,10 +34,18 @@ public class PlayGameActivity extends Activity {
     			Mastermind.Results.GET_CHOICE);
     }
     
-    public void onSaveInstanceState(Bundle b){
-    	
+    public void onSaveInstanceState(Bundle savedInstanceState){
+    	savedInstanceState.putParcelable("Game", thisGame);
+    	super.onSaveInstanceState(savedInstanceState);
     }
     
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+    	super.onRestoreInstanceState(savedInstanceState);
+    	
+    	thisGame = Game.class.cast(savedInstanceState.getParcelable("Game"));
+    	//thisGame.rebuildGameFromParcel(this);
+    	thisGame.rebuildGuessBoard(this);
+    }
     
     public void onActivityResult(int requestCode, int resultCode, Intent data){
     	if(requestCode == Mastermind.Results.GET_CHOICE && resultCode == Mastermind.Results.SEND_CHOICE){
@@ -62,6 +64,7 @@ public class PlayGameActivity extends Activity {
     			thisGame.showSolution();
     			this.endGame("Game Over");
     		}catch(Game.GameWinException e){
+    			thisGame.showSolution();
     			this.endGame("Contrats! You've won!");
     		}
     	}

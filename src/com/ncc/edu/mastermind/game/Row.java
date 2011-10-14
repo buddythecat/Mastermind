@@ -3,7 +3,9 @@ package com.ncc.edu.mastermind.game;
 import android.view.View;
 import android.view.ViewGroup;
 
-public abstract class Row {
+public abstract class Row{
+	public static final int ROW_PARCEL = 32;
+	
 	protected Peg[] pegs;
 	protected ViewGroup pegSet;
 
@@ -53,7 +55,7 @@ public abstract class Row {
 	
 	public int findPegIndex(Peg p){
 		int i = 0;
-		while(!pegs[i].equals(p))
+		while(i<4 && !pegs[i].equals(p))
 			i++;
 		return i;
 	}

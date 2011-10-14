@@ -1,10 +1,10 @@
 package com.ncc.edu.mastermind.game;
 
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class Peg{
+	public static final int PEG_PARCEL=31;
 	private Choice pegState;
 	private View pegButton;
 	private int position;
@@ -20,7 +20,7 @@ public class Peg{
 		pegButton = v;
 		position = p;
 	}
-	
+		
 	public Choice getChoice()		{ return pegState;  }
 	public void setChoice(Choice c)	{ pegState = c;  	}
 	public View getView()			{ return pegButton;	}
@@ -37,6 +37,10 @@ public class Peg{
 		}
 	}
 	
+	public void redrawView(){
+		this.markPeg(pegState);
+	}
+	
 	public void clearPeg(){
 		this.markPeg(Choice.EMPTY);
 	}
@@ -50,5 +54,4 @@ public class Peg{
 		this.getView().setEnabled(true);
 		this.getView().setFocusable(true);
 	}
-	
 }

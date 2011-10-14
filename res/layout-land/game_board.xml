@@ -4,155 +4,114 @@
 	android:orientation="vertical" 
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
-	
-	<LinearLayout
+	<ScrollView 
+		android:id="@+id/workspace"
+		android:layout_width="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_height="200dp">
+		
+	<TableLayout 
 		android:id="@+id/game.board"
-		android:orientation="horizontal"
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content">
 		
-		<LinearLayout
-			android:id="@+id/game.row0"
-			android:orientation="vertical" 
+		<TableRow 
+			android:id="@+id/game.row0" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">	
+
+			<include layout="@layout/game_board_row" />
+			<include layout="@layout/game_feedback" />
+		</TableRow>
+		
+		<TableRow 
+			android:id="@+id/game.row1" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">				
+
+			<include layout="@layout/game_board_row" />
+			<include layout="@layout/game_feedback" />
+		</TableRow>
+		
+		<TableRow 
+			android:id="@+id/game.row2" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 1" />
-				
+
 			<include layout="@layout/game_board_row" />
-				
-		</LinearLayout>
+			<include layout="@layout/game_feedback" />
+		</TableRow>
 		
-		<LinearLayout
-			android:id="@+id/game.row1"
-			android:orientation="vertical" 
+		<TableRow 
+			android:id="@+id/game.row3" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 2" />
-				
+
 			<include layout="@layout/game_board_row" />
-				
-		</LinearLayout>
+			<include layout="@layout/game_feedback" />
+		</TableRow>
 		
-		<LinearLayout
-			android:id="@+id/game.row2"
-			android:orientation="vertical" 
+		<TableRow 
+			android:id="@+id/game.row4" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 3" />
-				
-			<include layout="@layout/game_board_row" />
-			
-		</LinearLayout>
-		
-		<LinearLayout 
-			android:id="@+id/game.row3"
-			android:orientation="vertical" 
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 4" />
-				
-			<include layout="@layout/game_board_row" />
-				
-		</LinearLayout>
-		
-		<LinearLayout
-			android:id="@+id/game.row4"
-			android:orientation="vertical" 
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 5" />
-				
-			<include layout="@layout/game_board_row" />
-		</LinearLayout>
-		
-		<LinearLayout 
-			android:id="@+id/game.row5"
-			android:orientation="vertical" 
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 6" />
-				
-			<include layout="@layout/game_board_row" />
-				
-		</LinearLayout>
-		
-		<LinearLayout 
-			android:id="@+id/game.row6"
-			android:orientation="vertical" 
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 7" />
-			<include layout="@layout/game_board_row" />
-				
-		</LinearLayout>
-		
-		<LinearLayout 
-			android:id="@+id/game.row7"
-			android:orientation="vertical" 
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
-			
-			<TextView 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:text="Guess 8" />
-			<include layout="@layout/game_board_row" />
-				
-		</LinearLayout>
-		
-	</LinearLayout>
 	
-	<LinearLayout
-		android:orientation="vertical"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center_horizontal">
+			<include layout="@layout/game_board_row" />
+			<include layout="@layout/game_feedback" />
+		</TableRow>
 		
-		<LinearLayout 
-			android:id="@+id/game.solution"
-			android:orientation="horizontal"
-			android:layout_gravity="center"
-			android:layout_marginTop="12dp" 
+		<TableRow 
+			android:id="@+id/game.row5" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+				
+			<include layout="@layout/game_board_row" />
+			<include layout="@layout/game_feedback" />	
+		</TableRow>
+		
+		<TableRow 
+			android:id="@+id/game.row6" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
 			
-			<TextView 
-				android:layout_gravity="center_vertical"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textSize="24dp" 
-				android:text="Solution" />
+			<include layout="@layout/game_board_row" />
+			<include layout="@layout/game_feedback" />	
+		</TableRow>
+		
+		<TableRow 
+			android:id="@+id/game.row7" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			
+			<include layout="@layout/game_board_row" />
+			<include layout="@layout/game_feedback" />
 				
+		</TableRow>
+		
+	</TableLayout>
+	</ScrollView>
+	
+	<TextView 
+		android:layout_marginTop="5dp"
+		android:layout_width="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_height="20dip" 
+		android:text="And the Solution is ..." />
+		
+	<TableLayout 
+		android:layout_width="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_height="wrap_content">
+		
+		<TableRow 
+			android:id="@+id/game.solution" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
 			<include layout="@layout/game_board_solution" />
 				
-		</LinearLayout>
-	</LinearLayout>
+		</TableRow>
+		
+	</TableLayout>
+
 </LinearLayout>
