@@ -12,6 +12,7 @@
 	<TableLayout 
 		android:id="@+id/game.board"
 		android:layout_width="wrap_content"
+		android:layout_gravity="center_horizontal"
 		android:layout_height="wrap_content">
 		
 		<TableRow 
@@ -93,11 +94,13 @@
 	<TextView 
 		android:layout_marginTop="50dp"
 		android:layout_width="fill_parent"
+		android:layout_gravity="center_horizontal"
 		android:layout_height="20dip" 
 		android:text="And the Solution is ..." />
 		
 	<TableLayout 
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
+		android:layout_gravity="center_horizontal"
 		android:layout_height="wrap_content">
 		
 		<TableRow 
