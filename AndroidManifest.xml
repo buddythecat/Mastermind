@@ -19,7 +19,7 @@
 
        	<activity android:name="com.ncc.edu.mastermind.AboutGameActivity"
        		android:label="@string/about.label"
-       		android:theme="@android:style/Theme.Dialog">
+       		android:theme="@style/FullHeightDialog">
        	</activity>
        	
        	<activity android:name="com.ncc.edu.mastermind.ChooserActivity"

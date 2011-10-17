@@ -15,7 +15,7 @@
 		android:text="Mastermind:"/>
    <ScrollView
   		android:layout_width="wrap_content"
-  		android:layout_height="200dp">
+  		android:layout_height="150dp">
 		<LinearLayout 
 			android:orientation="vertical"
 			android:layout_width="wrap_content"

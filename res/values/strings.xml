@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Mastermind</string>
-    <string name="about.text">About</string>
-    <string name="about.label">About Mastermind</string>
+    <string name="about.label">About</string>
+    <string name="about.text">Mastermind is a very simple code breaking game invented in the 1970\'s (according to wikipedia)\n
+    	The game involves a set of 8 Guesses, and an Answer, each of which contains 4 pegs; each peg has 6 possible colors.  
+    	Your job, as the player, is to successfully determine the solution in less then 8 guesses.  After each guess, 
+    	the game will give you feedback in the section to the right of the guess.  If you guess the correct color of a peg, but
+    	guess that color in the incorrect spot, there will be a white peg in the feedback section.  If you guess the correct
+    	color of a peg, and make that guess in the correct spot, there will be a black peg in the feedback section. Use these
+    	hints in order to successfully guess the code and win the game!</string>
     <string name="chooser.label">Pick a Color</string>
     <string name="chooser.submit">Submit</string>
     <string name="chooser.headline">Make A Guess</string>

@@ -17,19 +17,47 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+/**
+ * PlayGameActivity Class
+ * This Class is the Activity which is shows the GameBoard and
+ * drives the Game itself.  It's inner class, the Game object
+ * stores all of the different Rows and Buttons, and has all
+ * the logic for the Mastermind Game.
+ * @author Rich Tufano
+ *
+ */
 public class PlayGameActivity extends Activity {
 	private Game thisGame;
 	
+	/**
+	 * onCreate -
+	 * creates the gameBoard from a savedInstanceState (if any),
+	 */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_board);
         thisGame = new Game();
     }
     
-    protected Game getGame()			{	return thisGame;	}
+    /**
+     * getGame
+     * @return the Game object for this Activity
+     */
+    public Game getGame(){
+    	return thisGame;
+    }
     
-    
+    /**
+     * launchChooser
+     * the launchChooser method is tied to each button in the GuessRow's.
+     * When these buttons are clicked, this method is called.
+     * The launchChooser method creates a new intent, stores the peg
+     * which has been clicked, and starts the chooserActivity
+     * and waits for the result.  
+     * @param v the peg which has been clicked
+     */
     public void launchChooser(View v){
     	Intent chooserIntent = new Intent(this, ChooserActivity.class);
     	//set the active peg to clicked view
@@ -41,11 +69,19 @@ public class PlayGameActivity extends Activity {
     			Mastermind.Results.GET_CHOICE);
     }
     
+    /**
+     * onSaveInstanceState - 
+     * parcels the game and packs it into the bundle.
+     */
     public void onSaveInstanceState(Bundle savedInstanceState){
     	savedInstanceState.putParcelable("Game", thisGame);
     	super.onSaveInstanceState(savedInstanceState);
     }
     
+    /**
+     * onRestoreInstanceState - 
+     * rebuilds the Activity based on the bundle passed to it
+     */
     public void onRestoreInstanceState(Bundle savedInstanceState){
     	super.onRestoreInstanceState(savedInstanceState);
     	
@@ -54,6 +90,21 @@ public class PlayGameActivity extends Activity {
     	thisGame.rebuildGuessBoard(this);
     }
     
+    /**
+     * onActivityResult - 
+     * this overridden method is what handles the result from the ChooserActivity.
+     * It takes the resulting Intent, unpacks the bundle, and removes the choice from 
+     * the bundle.  The choice is encoded as an integer key, which is then turned into 
+     * it's corresponding choice.  The active peg is then marked with this choice.
+     * 
+     * This method then checks if the row is full and, if it is, tells them game to check the 
+     * row for a win, and move on.
+     * 
+     * If the game has been won or lost, the corresponding Exception is thrown, and this method
+     * handles them by calling the endGame() method with the result.
+     * 
+     * Otherwise, it returns back to the Activity.
+     */
     public void onActivityResult(int requestCode, int resultCode, Intent data){
     	if(requestCode == Mastermind.Results.GET_CHOICE && resultCode == Mastermind.Results.SEND_CHOICE){
     		Bundle result = data.getExtras();
@@ -77,6 +128,14 @@ public class PlayGameActivity extends Activity {
     	}
     }
     
+    /**
+     * endGame - 
+     * this method shows the AlertDialog that tells the player
+     * whether or not they've won the game, and prompts them if they'd
+     * like to play another game.  This method then either finishes the Activity
+     * or starts a new game.
+     * @param s the result of the game: either "Game Over" or "You've Won"
+     */
     private void endGame(String s){
     	AlertDialog.Builder builder = new AlertDialog.Builder(this);
     	builder.setMessage(s+"\nWould you like to play again?")
@@ -160,6 +219,7 @@ public class PlayGameActivity extends Activity {
     		rowNum=0;
     		this.buildGuessBoard(PlayGameActivity.this);
     		this.buildSolutionRow(PlayGameActivity.this);
+    		Toast.makeText(PlayGameActivity.this.getApplicationContext(), "Guess #"+(rowNum+1), Toast.LENGTH_SHORT).show();
     	}
     	
     	/**
@@ -392,6 +452,7 @@ public class PlayGameActivity extends Activity {
         		if(rowNum<Game.NUM_GUESS_ROWS){
         			currentRow = board[rowNum];
         			currentRow.unlockRow();
+        			Toast.makeText(PlayGameActivity.this.getApplicationContext(), "Guess #"+(rowNum+1), Toast.LENGTH_SHORT).show();
         			//currentRow.matchPegs(solution.getPegs());
            		}
         		else
